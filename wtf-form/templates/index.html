@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Puppy</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<p>
+		{% if breed %}
+			The breed you entered is {{ breed }}
+			Update it in the form:
+		{% else %}
+			Please Enter your Breed: 
+		{% endif %}
+
+	</p>
+		
+	<form method="POST">
+		{{ form.hidden_tag() }}             <!--for security purpose --> 
+		{{ form.breed.label }} {{ form.breed }} <!-- label here is what we passed as a string-->
+		{{ form.submit() }}
+
+
+	</form>
+		
+
+
+
+
+
+</body>
+</html>
